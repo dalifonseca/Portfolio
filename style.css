@@ -1,0 +1,235 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* Cor de fundo e imagem */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-image: url('../image/Untitled design.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Estilo do cabeçalho */
+header {
+    background: linear-gradient(97.54deg, #3a80b6 35.49%, #01416f 165.37%);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between; /* Distribui a logo, o título e as redes sociais */
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+header .logo-e-texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 60%; /* Garantir que o conteúdo do header ocupe o espaço adequado */
+}
+
+/* Logo no lado esquerdo */
+.imagem-logo {
+    width: 120px; /* Logo menor */
+    height: auto;
+}
+
+/* Título centralizado */
+header h1 {
+    font-size: 2em;
+    margin: 0;
+    text-align: center;
+    flex-grow: 1; /* Permite que o título se expanda para ocupar o espaço livre */
+}
+
+/* Parágrafo abaixo do título */
+header p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+    text-align: center;
+    color: #399cff;
+}
+
+/* Redes sociais no lado direito */
+.redes-sociais {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.redes-sociais a {
+    width: 35px;  /* Ícones das redes sociais menores */
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.redes-sociais i {
+    font-size: 1.8rem;  /* Ícones menores */
+    color: white;
+}
+
+.redes-sociais .instagram:hover i {
+    color: #E1306C;
+}
+
+.redes-sociais .github:hover i {
+    color: #a3a3a3;
+}
+
+/* Estilo da área de projetos */
+.container {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+.project-card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 15px;
+    flex: 1;
+}
+
+.project-title {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+}
+
+.project-description {
+    font-size: 1em;
+    color: #666;
+    margin: 0 0 15px;
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.project-links a:hover {
+    color: #0056b3;
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #399cff;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+footer a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Muda a direção para coluna em telas menores */
+        align-items: center; /* Centraliza os itens */
+        padding: 10px;
+    }
+
+    header .logo-e-texto {
+        width: auto; /* Ajusta o conteúdo ao espaço */
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        height: auto;
+    }
+
+    .logo-e-texto {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .redes-sociais {
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .imagem-logo {
+        width: 120px;  /* Logo ainda menor em telas pequenas */
+        margin-bottom: 5px;
+    }
+
+    .redes-sociais a {
+        width: 30px;  /* Ícones das redes sociais ainda menores */
+        height: 30px;
+    }
+
+    .redes-sociais i {
+        font-size: 1.5rem;  /* Ícones menores em dispositivos móveis */
+    }
+}
